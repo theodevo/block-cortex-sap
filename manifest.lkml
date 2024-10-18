@@ -1,5 +1,5 @@
 constant: CONNECTION_NAME {
-  value: "abl-cortex"
+  value: "abl-cortex-bq"
   export: override_required
 }
 
