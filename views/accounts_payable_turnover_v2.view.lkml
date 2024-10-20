@@ -168,7 +168,7 @@ view: accounts_payable_turnover_v2 {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.PostingDateInTheDocument_BUDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.PostingDateInTheDocument_BUDAT) ;;
   }
 
   dimension: target_currency_tcurr {
