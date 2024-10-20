@@ -47,7 +47,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.AgreementValidFrom_GUEBG ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.AgreementValidFrom_GUEBG) ;;
   }
 
   dimension_group: agreement_valid_to_gueen {
@@ -62,7 +62,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.AgreementValidTo_GUEEN ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.AgreementValidTo_GUEEN) ;;
   }
 
   dimension: allocation_indicator_vpzuo {
@@ -187,7 +187,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.BOMDate_STDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.BOMDate_STDAT) ;;
   }
 
   dimension: bomexplosion_number_sernr {
@@ -247,7 +247,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.ChangedOn_AEDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.ChangedOn_AEDAT) ;;
   }
 
   dimension: checking_group_for_availability_check_mtvfp {
@@ -404,7 +404,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.CreationDate_ERDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.CreationDate_ERDAT) ;;
     hidden: no
   }
 
@@ -527,7 +527,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.CustomerPurchaseOrderDate_BSTDK ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.CustomerPurchaseOrderDate_BSTDK) ;;
   }
 
   dimension: customer_purchase_order_number_bstnk {
@@ -562,12 +562,12 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.DateOfNextCreditCheckOfDocument_CMNUP ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.DateOfNextCreditCheckOfDocument_CMNUP) ;;
   }
 
   dimension: day_of_sales_order_creation_date_erdat {
     type: number
-    sql: ${TABLE}.DayOfSalesOrderCreationDate_ERDAT ;;
+    sql: ${creation_date_erdat_date} ;;
   }
 
   dimension: days_by_which_the_quantity_can_be_shifted_kever {
@@ -634,7 +634,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.DocumentDate_AUDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.DocumentDate_AUDAT) ;;
   }
 
   dimension: document_indicator_vbklt {
@@ -714,7 +714,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.HandOverDateAtTheHandOverLocation_HANDOVERDATE ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.HandOverDateAtTheHandOverLocation_HANDOVERDATE) ;;
   }
 
   dimension: hand_over_time_at_the_hand_over_location_handovertime {
@@ -822,7 +822,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.LastChangedOn_AEDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.LastChangedOn_AEDAT) ;;
   }
 
   dimension_group: last_customer_contact_date_mahdt {
@@ -837,7 +837,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.LastCustomerContactDate_MAHDT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.LastCustomerContactDate_MAHDT) ;;
   }
 
   dimension: leading_uo_m_kzfme {
@@ -944,7 +944,7 @@ view: sales_orders {
 
   dimension: month_of_sales_order_creation_date_erdat {
     type: number
-    sql: ${TABLE}.MonthOfSalesOrderCreationDate_ERDAT ;;
+    sql: ${creation_date_erdat_month} ;;
   }
 
   dimension: mrparea_berid {
@@ -1017,7 +1017,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.NextDate_CMNGV ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.NextDate_CMNGV) ;;
   }
 
   dimension: not_afiscal_special_case_for_cfopdetermination_spcsto {
@@ -1232,7 +1232,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.QuotationDateFrom_ANGDT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.QuotationDateFrom_ANGDT) ;;
   }
 
   dimension_group: quotation_date_to_bnddt {
@@ -1247,7 +1247,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.QuotationDateTo_BNDDT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.QuotationDateTo_BNDDT) ;;
   }
 
   dimension: reason_augru {
@@ -1272,7 +1272,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.ReconciliationDate_ABDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.ReconciliationDate_ABDAT) ;;
   }
 
   dimension: reference_document_number_xblnr {
@@ -1312,7 +1312,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.ReleASeDateOfTheDocumentDeterminedByCreditManagement_CMFRE ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.ReleASeDateOfTheDocumentDeterminedByCreditManagement_CMFRE) ;;
   }
 
   dimension: released_credit_value_of_the_document_amtbl {
@@ -1357,7 +1357,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.RequestedDeliveryDate_VDATU ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.RequestedDeliveryDate_VDATU) ;;
   }
 
   dimension: requirements_type_bedae {
@@ -1597,7 +1597,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.StatisticsDate_STADAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.StatisticsDate_STADAT) ;;
   }
 
   dimension: status_expected_price_cepok {
@@ -1893,7 +1893,7 @@ view: sales_orders {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.WarrantyDate_GWLDT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.WarrantyDate_GWLDT) ;;
   }
 
   dimension: wbselement_hdr_ps_psp_pnr {
@@ -1908,7 +1908,7 @@ view: sales_orders {
 
   dimension: week_of_sales_order_creation_date_erdat {
     type: number
-    sql: ${TABLE}.WeekOfSalesOrderCreationDate_ERDAT ;;
+    sql: ${creation_date_erdat_week} ;;
   }
 
   dimension: weight_unit_gewei {
@@ -1918,7 +1918,7 @@ view: sales_orders {
 
   dimension: year_of_sales_order_creation_date_erdat {
     type: number
-    sql: ${TABLE}.YearOfSalesOrderCreationDate_ERDAT ;;
+    sql: ${creation_date_erdat_year} ;;
   }
 
   dimension: your_reference_ihrez {
