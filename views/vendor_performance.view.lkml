@@ -162,7 +162,7 @@ view: vendor_performance {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.PostingDateInTheDocument_BUDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.PostingDateInTheDocument_BUDAT) ;;
     hidden: no
   }
 
@@ -475,7 +475,7 @@ view: vendor_performance {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.PostingDateInTheDocument_BUDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.PostingDateInTheDocument_BUDAT) ;;
   }
 
   dimension_group: purchasing_document_date_bedat {

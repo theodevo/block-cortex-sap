@@ -108,7 +108,7 @@ view: accounts_payable_overview_v2 {
       raw
     ]
     datatype: date
-    sql: ${TABLE}.PostingDateInTheDocument_BUDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.PostingDateInTheDocument_BUDAT) ;;
     convert_tz: no
     hidden: no
     drill_fields: []
@@ -206,7 +206,7 @@ view: accounts_payable_overview_v2 {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.PostingDateInTheDocument_BUDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.PostingDateInTheDocument_BUDAT) ;;
   }
 
   dimension: potential_penalty_in_source_currency {

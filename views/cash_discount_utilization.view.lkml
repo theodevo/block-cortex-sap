@@ -86,7 +86,7 @@ view: cash_discount_utilization {
       raw
     ]
     datatype: date
-    sql: ${TABLE}.PostingDateInTheDocument_BUDAT ;;
+    sql: PARSE_DATE ('%Y%m%d',${TABLE}.PostingDateInTheDocument_BUDAT) ;;
     hidden: no
     convert_tz: no
     drill_fields: []
