@@ -315,7 +315,7 @@ view: data_intelligence_ar {
     hidden: yes
     sql:
       CASE
-        when CAST(${Posting} as Date)<= CAST(CURRENT_DATE() as Date) and CAST(${Posting} as Date)>= DATE_SUB(CAST(CURRENT_DATE() as Date),INTERVAL {% parameter Day_Sales_Outstanding %} MONTH )
+        when CAST(${Posting_date} as Date)<= CAST(CURRENT_DATE() as Date) and CAST(${Posting_date} as Date)>= DATE_SUB(CAST(CURRENT_DATE() as Date),INTERVAL {% parameter Day_Sales_Outstanding %} MONTH )
       THEN ${Sales_Global_Currency}
       END;;
     #sql:
@@ -330,7 +330,7 @@ view: data_intelligence_ar {
     hidden: yes
     sql:
     CASE
-      when CAST(${Posting} as Date)<= CAST(CURRENT_DATE() as Date) and CAST(${Posting} as Date)>= DATE_SUB(CAST(CURRENT_DATE() as Date),INTERVAL {% parameter Day_Sales_Outstanding %} MONTH )
+      when CAST(${Posting_date} as Date)<= CAST(CURRENT_DATE() as Date) and CAST(${Posting_date} as Date)>= DATE_SUB(CAST(CURRENT_DATE() as Date),INTERVAL {% parameter Day_Sales_Outstanding %} MONTH )
     THEN ${Accounts_Receivable_Global_Currency}
     END;;
   #sql:
